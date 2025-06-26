@@ -1,0 +1,41 @@
+{
+	"name": "Deno",
+
+	"image": "denoland/deno:2.3.5",
+
+	"containerEnv": {
+		"DENO_DIR": "/home/vscode/.deno/"
+	},
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"denoland.vscode-deno"
+			],
+			"settings": {
+				"[css][html][json][scss][typescript][typescriptreact]": {
+					"editor.defaultFormatter": "denoland.vscode-deno",
+					"editor.formatOnSave": true,
+					"editor.quickSuggestions": {
+						"strings": "on"
+					}
+				}
+			}
+		}
+	},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "vscode"
+}
